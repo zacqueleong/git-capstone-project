@@ -4,10 +4,23 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background-color:#f7f7f7;
+    --container-bg-color: #fff;
+    --primary-text-color: #333;
+    --radio-select-color: var(--container-bg-color);
+    --button-text-color: var(--container-bg-color);
+    --button-darkmode-bg-color: #000000;
+    --button-add-bg-color: #4caf50;
+    --button-prior-bg-color: #ff9800;
+    --button-delete-bg-color: #f44336;
+    --priority-marker-color: #ff9800;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +31,7 @@ button {
     width: 100px;
     border: none;
     border-radius: 5px;
-    color: #fff;
+    color: var(--button-text-color);
     font-size: 16px;
     padding: 8px 16px;
     margin-left: 10px;
@@ -26,7 +39,7 @@ button {
 }
 
 .container {
-    background-color: #fff;
+    background-color: var(--container-bg-color);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -36,7 +49,20 @@ button {
 
 .container h1{
     text-align: center;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+}
+
+.container-hdr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.container-hdr #darkmode-btn {
+    background-color: var(--button-darkmode-bg-color);
+    width: 220px;
+    height: 40px;
 }
 
 .add-todo-form {
@@ -54,11 +80,12 @@ button {
 }
 
 .add-todo-form .add-btn {
-    background-color: #4caf50;
+    background-color: var(--button-add-bg-color);
 }
 
 .filter {
     margin: 10px auto;
+    accent-color: var(--radio-select-color);
 }
 
 .task-item {
@@ -71,7 +98,7 @@ button {
 }
 
 .task-item.priority{
-    border-left: 5px solid #ff9800;
+    border-left: 5px solid var(--priority-marker-color);
 }
 
 .task-item p {
@@ -85,10 +112,16 @@ button {
 }
 
 .task-item .prioritize-btn{
-    background-color: #ff9800;
+    background-color: var(--button-prior-bg-color);
     margin-left: auto;
 }
 
 .task-item .delete-btn{
-    background-color: #f44336;
+    background-color: var(--button-delete-bg-color);
+}
+
+.dark-mode {
+    --background-color:#000000;
+    --container-bg-color: #121212;
+    --primary-text-color: #FFFFFF;
 }
