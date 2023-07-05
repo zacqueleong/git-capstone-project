@@ -106,5 +106,13 @@ filterPriority.addEventListener('change', () => syncTodosToDOM());
 filterNonPriority.addEventListener('change', () => syncTodosToDOM());
 filterCompleted.addEventListener('change', () => syncTodosToDOM());
 
+// Dark Mode
+const darkmodeEl = document.querySelector('#darkmode-btn');
+darkmodeEl.addEventListener('click', () => toggleDarkMode());
+function toggleDarkMode(){
+    const bodyEl = document.body;
+    bodyEl.classList.toggle("dark-mode");
+}
+
 // Create Todos on Page Load
 syncTodosToDOM();
